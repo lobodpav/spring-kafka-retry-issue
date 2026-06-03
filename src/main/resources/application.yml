@@ -1,0 +1,12 @@
+spring:
+  kafka:
+    # Bootstrap servers are supplied at runtime by the @ServiceConnection Testcontainers broker
+    consumer:
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    properties:
+      allow.auto.create.topics: "true"
